@@ -67,25 +67,25 @@ The [newly released model](https://github.com/d-li14/mobilenetv2.pytorch/blob/ma
 ```shell
 python imagenet.py \
     -a mobilenetv2 \
-    -d <path-to-ILSVRC2012-data> \
+    -d /data/zhiwei.dong/data/imagenet/ \
     --epochs 150 \
     --lr-decay cos \
     --lr 0.05 \
     --wd 4e-5 \
-    -c <path-to-save-checkpoints> \
-    --width-mult <width-multiplier> \
-    --input-size <input-resolution> \
-    -j <num-workers>
+    -c pretrained/dongz/qnq/ \
+    --width-mult 1.0 \
+    --input-size 224 \
+    -j 16
 ```
 
 ## Test
 ```shell
 python imagenet.py \
     -a mobilenetv2 \
-    -d <path-to-ILSVRC2012-data> \
-    --weight <pretrained-pth-file> \
-    --width-mult <width-multiplier> \
-    --input-size <input-resolution> \
+    -d /data/zhiwei.dong/data/imagenet/ \
+    --weight pretrained/mobilenetv2_1.0-0c6065bc.pth \
+    --width-mult 1.0\
+    --input-size 224\
     -e
 ```
 
